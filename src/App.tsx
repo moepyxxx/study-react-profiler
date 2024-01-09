@@ -6,9 +6,7 @@ import { Page3 } from "./components/Page3";
 const App = () => {
   return (
     <>
-      <h1>Hello World</h1>
-      <p>App.jsx</p>
-      {/* BrowserRouter, Routes, Route の定義、path に一致する element を表示 */}
+      <p>check performance</p>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/page1" element={<Page1 />} />
