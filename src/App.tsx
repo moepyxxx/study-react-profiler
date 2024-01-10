@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Page1 } from "./components/Page1";
-import { Page2 } from "./components/Page2";
-import { Page3 } from "./components/Page3";
-import { Page4 } from "./components/Page4";
+import { Page1 } from "./components/Page1/Page";
+import { Page2 } from "./components/Page2/Page";
+import { Page3 } from "./components/Page3/Page";
+import { Page4 } from "./components/Page4/Page";
 import { FC } from "react";
 
 const App = () => {

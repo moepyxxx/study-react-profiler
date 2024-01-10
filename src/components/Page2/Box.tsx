@@ -1,38 +1,6 @@
 import { FC, useState } from "react";
 
-export const Page2: FC = () => {
-  return (
-    <>
-      <h2>Page2 optimize props</h2>
-      <Form />
-      <Box />
-    </>
-  );
-};
-
-const Form: FC = () => {
-  const [inputText, setInputText] = useState<string>("");
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setInputText(e.target.value);
-
-  const handleSubmit = () => {
-    alert(`inputText is ${inputText}`);
-  };
-
-  return (
-    <div
-      style={{
-        padding: "20px 0",
-      }}>
-      <p>input!</p>
-      <input type="text" value={inputText} onChange={handleChange} />
-      <button onClick={handleSubmit}>submit</button>
-    </div>
-  );
-};
-
-const Box: FC = () => {
+export const Box: FC = () => {
   const [selected, setSelected] = useState<number>(0);
   const processedBox = Array.from(new Array(10_000), (_, i) => `box${i}`).map(
     (_, index) => {
@@ -52,7 +20,6 @@ const Box: FC = () => {
         flexDirection: "row",
       }}>
       {processedBox.map((item, index) => {
-        console.log("keisan!");
         const added = Array.from(new Array(index), (_, i) => i).reduce(
           (prev, current) => prev + current,
           0
