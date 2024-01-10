@@ -1,9 +1,9 @@
-import { FC, memo, useMemo, useState } from "react";
+import { FC, memo, useMemo, useRef, useState } from "react";
 
-export const Page3: FC = () => {
+export const Page4: FC = () => {
   return (
     <>
-      <h2>page3 memo</h2>
+      <h2>page4 ref</h2>
       <Form />
       <Box />
     </>
@@ -11,13 +11,10 @@ export const Page3: FC = () => {
 };
 
 const Form: FC = () => {
-  const [inputText, setInputText] = useState<string>("");
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setInputText(e.target.value);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = () => {
-    alert(`inputText is ${inputText}`);
+    alert(`inputText is ${inputRef.current}`);
   };
 
   return (
@@ -26,7 +23,7 @@ const Form: FC = () => {
         padding: "20px 0",
       }}>
       <p>input!</p>
-      <input type="text" value={inputText} onChange={handleChange} />
+      <input type="text" ref={inputRef} />
       <button onClick={handleSubmit}>submit</button>
     </div>
   );
